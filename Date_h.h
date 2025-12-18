@@ -8,7 +8,7 @@
  public:
     // Get current date as string in YYYY-MM-DD format
     static std::string getCurrentDate() {
-        std::time_t now = std::time(nullptr);
+        std::time_t now = std::time(Null_ptr);
         std::tm* tm = std::localtime(&now);
         std::ostringstream oss;
         oss << std::setfill('0') 
