@@ -21,7 +21,6 @@ class User{
 		User(string& userID, string& password, string& name, string& email, string& gender, string& phone, string& department, string userType, string& regDte);
 		User();
 
-		virtual ~User() = default;
 		void displayProfile() const;
 
 		void setPassword(const string& pass);
