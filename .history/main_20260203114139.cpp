@@ -17,13 +17,13 @@
 using namespace std;         // Standard namespace directive
 
 
-int maxLecturesPerDay = 8;   // Maximum number of lectures allowed per day
-int numberOfDays = 5;    // Number of working days (Monday to Friday)
-
-
+int maxLecturesPerDay = 8;
+int numberOfDays = 5;
+//
+//
 //// //Variables
-DateTimeUtils DateTime;      // Date and time utility object instance
-vector<Faculty> FacultyRegistrations;    // Stores all faculty registration records
+DateTimeUtils DateTime;
+vector<Faculty> FacultyRegistrations;
 //// vector<Faculty> ApprovedFaculty;
 vector<Student> StudentRegistrations;
 vector<Department> Time_Table_Incharge;
@@ -33,23 +33,23 @@ vector<FacultyComplaints> FACULTY_COMPLAINTS;
 vector<StudentComplaints> STUDENT_COMPLAINTS;
 vector<Course> AllCourses;
 map<int, UnitTime> UNIT = {
-	{1, {"8:30", "9:20"}},  // Slot 1: 8:30 AM to 9:20 AM
-	{2, {"9:20", "10:10"}}, // Slot 2: 9:20 AM to 10:10 AM
-	{3, {"10:10", "11:00"}}, // Slot 3: 10:10 AM to 11:00 AM
-    {4, {"11:00", "11:50"}}, // Slot 4: 11:00 AM to 11:50 AM
-    {5, {"11:50", "12:40"}}, // Slot 5: 11:50 AM to 12:40 PM
-    {6, {"12:40", "1:30"}},  // Slot 6: 12:40 PM to 1:30 PM
-    {7, {"1:30", "2:20"}},   // Slot 7: 1:30 PM to 2:20 PM
-    {8, {"2:20", "3:30"}},   // Slot 8: 2:20 PM to 3:30 PM
+	{1, {"8:30", "9:20"}},
+	{2, {"9:20", "10:10"}},
+	{3, {"10:10", "11:00"}},
+	{4, {"11:00", "11:50"}},
+	{5, {"11:50", "12:40"}},
+	{6, {"12:40", "1:30"}},
+	{7, {"1:30", "2:20"}},
+	{8, {"2:20", "3:30"}},
 };
-map<int, string> DAYS = {  // Maps day numbers to day names
-	 {1, "Monday"},           // Day 1: Monday
-    {2, "Tuesday"},          // Day 2: Tuesday
-    {3, "Wednesday"},        // Day 3: Wednesday
-    {4, "Thursday"},         // Day 4: Thursday
-    {5, "Friday"},           // Day 5: Friday
-    {6, "Saturday"},         // Day 6: Saturday
-    {7, "Sunday"},           // Day 7: Sunday
+map<int, string> DAYS = {
+	{1, "Monday"},
+	{2, "Tuesday"},
+	{3, "Wednesday"},
+	{4, "Thursday"},
+	{5, "Friday"},
+	{6, "Saturday"},
+	{7, "Sunday"},
 };
 // -----------------------------------------------------------
 // COLOR SETTINGS (Font + Background)
@@ -62,8 +62,8 @@ int Background = 0;    // Default background color (Black)
 // ADMIN LOGIN CREDENTIALS
 // -----------------------------------------------------------
 struct Admin_Login_Credentials {
-    string Admin_UserName;    // Admin username field
-    string Admin_Password;    // Admin password field
+    string Admin_UserName;
+    string Admin_Password;
 };
 Admin_Login_Credentials Admin1 = {"Admin123", "456"};
 
@@ -76,15 +76,15 @@ Admin_Login_Credentials Admin1 = {"Admin123", "456"};
 //--------------------
 //--------------------
 User::User(string& userID, string& password, string& name, string& email, string& gender, string& phone, string& department, string userType, string& regDte) : userID(userID), password(password), name(name), email(email), gender(gender), phone(phone), department(department), userType(userType), registrationDate(regDte) { }
-User::User() { } // Empty constructor with no parameters
+User::User() { }
 
-void User::displayProfile() const {  // const method - doesn't modify object
-    cout<<"Name: "<<name<<endl;      // Output name field
-    cout<<"Gender: "<<gender<<endl;  // Output gender field
-    cout<<"Email: "<<email<<endl;    // Output email field
-    cout<<"Phone: "<<phone<<endl;    // Output phone field
-    cout<<"Department: "<<department<<endl;  // Output department field
-    cout<<"User Type: "<<userType    // Output user type
+void User::displayProfile() const {
+			cout<<"Name: "<<name<<endl;
+			cout<<"Gender: "<<gender<<endl;
+			cout<<"Email: "<<email<<endl;
+			cout<<"Phone: "<<phone<<endl;
+			cout<<"Department: "<<department<<endl;
+			cout<<"User Type: "<<userType
 				<<"\nApproval Status: "<< (isApproved ? "Approved\n" : "Pending\n")
             	<<"Registration Date: "<<registrationDate<<endl;
 	}
@@ -1709,11 +1709,10 @@ void handleFacultyLogin();
 // -----------------------------------------------------------
 // MAIN FUNCTION
 // -----------------------------------------------------------
-// Main application entry point
 int main() {
-    int option; // Variable to store user's menu choice
+    int option;
 	void initializeData();
-   // Display application title banner
+    // Application Title
     cout << "\t\t\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n"
          << "\t\t\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n"
          << "\t\t\t:::                                                       :::\n"
@@ -1738,13 +1737,51 @@ int main() {
 
     cin >> option;
 
-    if(option == 1) // If user chooses to continue
-        HomePage(); // Call HomePage function to start application
-    else     // If user chooses to exit
-        return 0;  
+    if(option == 1)
+        HomePage();
+    else
+        return 0;
 }
 
+// void initializeData()
+// {
+// 	string UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig, HOD, Incharge;
+// 	int Semester;
+// 	UserId = "Mechatronics";
+// 	Password = "MCT-24";
+// 	NAme = "Mecha";
+// 	HOD = "ABC";
+// 	Incharge = "DEF";
 
+// 	Department tempDepartment(UserId, Password, NAme, HOD, Incharge);
+// 	Time_Table_Incharge.push_back(tempDepartment);
+
+// 	UserId = "ABCD";
+// 	Password = "123";
+// 	NAme = "ABCD";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	desig = "Assistant Professor";
+// 	Faculty tempFaculty(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig);
+//     tempFaculty.Approval("Yes");
+// 	FacultyRegistrations.push_back(tempFaculty);
+
+// 	UserId = "Ahmed";
+// 	Password = "123";
+// 	NAme = "Ahmed";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	Semester = 3;
+// 	Student tempStudent(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, Semester);
+//     tempStudent.Approval("Yes");
+// 	StudentRegistrations.push_back(tempStudent);
+// }
 
 // -----------------------------------------------------------
 // MAIN HOME PAGE SCREEN

@@ -78,13 +78,13 @@ Admin_Login_Credentials Admin1 = {"Admin123", "456"};
 User::User(string& userID, string& password, string& name, string& email, string& gender, string& phone, string& department, string userType, string& regDte) : userID(userID), password(password), name(name), email(email), gender(gender), phone(phone), department(department), userType(userType), registrationDate(regDte) { }
 User::User() { } // Empty constructor with no parameters
 
-void User::displayProfile() const {  // const method - doesn't modify object
-    cout<<"Name: "<<name<<endl;      // Output name field
-    cout<<"Gender: "<<gender<<endl;  // Output gender field
-    cout<<"Email: "<<email<<endl;    // Output email field
-    cout<<"Phone: "<<phone<<endl;    // Output phone field
-    cout<<"Department: "<<department<<endl;  // Output department field
-    cout<<"User Type: "<<userType    // Output user type
+void User::displayProfile() const {
+			cout<<"Name: "<<name<<endl;
+			cout<<"Gender: "<<gender<<endl;
+			cout<<"Email: "<<email<<endl;
+			cout<<"Phone: "<<phone<<endl;
+			cout<<"Department: "<<department<<endl;
+			cout<<"User Type: "<<userType
 				<<"\nApproval Status: "<< (isApproved ? "Approved\n" : "Pending\n")
             	<<"Registration Date: "<<registrationDate<<endl;
 	}
@@ -1709,11 +1709,10 @@ void handleFacultyLogin();
 // -----------------------------------------------------------
 // MAIN FUNCTION
 // -----------------------------------------------------------
-// Main application entry point
 int main() {
-    int option; // Variable to store user's menu choice
+    int option;
 	void initializeData();
-   // Display application title banner
+    // Application Title
     cout << "\t\t\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n"
          << "\t\t\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n"
          << "\t\t\t:::                                                       :::\n"
@@ -1738,13 +1737,51 @@ int main() {
 
     cin >> option;
 
-    if(option == 1) // If user chooses to continue
-        HomePage(); // Call HomePage function to start application
-    else     // If user chooses to exit
-        return 0;  
+    if(option == 1)
+        HomePage();
+    else
+        return 0;
 }
 
+// void initializeData()
+// {
+// 	string UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig, HOD, Incharge;
+// 	int Semester;
+// 	UserId = "Mechatronics";
+// 	Password = "MCT-24";
+// 	NAme = "Mecha";
+// 	HOD = "ABC";
+// 	Incharge = "DEF";
 
+// 	Department tempDepartment(UserId, Password, NAme, HOD, Incharge);
+// 	Time_Table_Incharge.push_back(tempDepartment);
+
+// 	UserId = "ABCD";
+// 	Password = "123";
+// 	NAme = "ABCD";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	desig = "Assistant Professor";
+// 	Faculty tempFaculty(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig);
+//     tempFaculty.Approval("Yes");
+// 	FacultyRegistrations.push_back(tempFaculty);
+
+// 	UserId = "Ahmed";
+// 	Password = "123";
+// 	NAme = "Ahmed";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	Semester = 3;
+// 	Student tempStudent(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, Semester);
+//     tempStudent.Approval("Yes");
+// 	StudentRegistrations.push_back(tempStudent);
+// }
 
 // -----------------------------------------------------------
 // MAIN HOME PAGE SCREEN

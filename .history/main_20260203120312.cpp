@@ -1741,10 +1741,48 @@ int main() {
     if(option == 1) // If user chooses to continue
         HomePage(); // Call HomePage function to start application
     else     // If user chooses to exit
-        return 0;  
+        return 0; 
 }
 
+// void initializeData()
+// {
+// 	string UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig, HOD, Incharge;
+// 	int Semester;
+// 	UserId = "Mechatronics";
+// 	Password = "MCT-24";
+// 	NAme = "Mecha";
+// 	HOD = "ABC";
+// 	Incharge = "DEF";
 
+// 	Department tempDepartment(UserId, Password, NAme, HOD, Incharge);
+// 	Time_Table_Incharge.push_back(tempDepartment);
+
+// 	UserId = "ABCD";
+// 	Password = "123";
+// 	NAme = "ABCD";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	desig = "Assistant Professor";
+// 	Faculty tempFaculty(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, desig);
+//     tempFaculty.Approval("Yes");
+// 	FacultyRegistrations.push_back(tempFaculty);
+
+// 	UserId = "Ahmed";
+// 	Password = "123";
+// 	NAme = "Ahmed";
+// 	Email = "agddgfd@hdh";
+// 	Gender = "Male";
+// 	Phone = "4654544747";
+// 	depart = "Mechatronics";
+// 	regDate = "4/11/25";
+// 	Semester = 3;
+// 	Student tempStudent(UserId, Password, NAme, Email, Gender, Phone, depart, regDate, Semester);
+//     tempStudent.Approval("Yes");
+// 	StudentRegistrations.push_back(tempStudent);
+// }
 
 // -----------------------------------------------------------
 // MAIN HOME PAGE SCREEN
